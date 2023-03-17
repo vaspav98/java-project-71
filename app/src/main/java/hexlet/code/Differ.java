@@ -18,9 +18,9 @@ public class Differ {
     public static String generate(Path filepath1, Path filepath2) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> map1 = mapper.readValue(new File(filepath1.toString()),
-                new TypeReference<Map<String, Object>>(){});
+                new TypeReference<Map<String, Object>>() { });
         Map<String, Object> map2 = mapper.readValue(new File(filepath2.toString()),
-                new TypeReference<Map<String, Object>>(){});
+                new TypeReference<Map<String, Object>>() { });
 
         var result = new StringBuilder("{\n");
 
