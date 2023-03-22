@@ -7,3 +7,5 @@
 [![asciicast](https://asciinema.org/a/567939.svg)](https://asciinema.org/a/567939)
 ### Step 7
 [![asciicast](https://asciinema.org/a/569122.svg)](https://asciinema.org/a/569122)
+### Step 8
+[![asciicast](https://asciinema.org/a/569276.svg)](https://asciinema.org/a/569276)
