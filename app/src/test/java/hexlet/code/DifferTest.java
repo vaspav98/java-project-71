@@ -7,8 +7,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJsonStylish() throws Exception {
-        String jsonFile1 = "./src/test/resources/file1.json";
-        String jsonFile2 = "./src/test/resources/file2.json";
+        String jsonFilePath1 = "./src/test/resources/file1.json";
+        String jsonFilePath2 = "./src/test/resources/file2.json";
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -36,13 +36,13 @@ public class DifferTest {
                   + setting3: none
                 }""";
 
-        assertThat(Differ.generate(jsonFile1, jsonFile2, "stylish")).isEqualTo(expected);
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
     public void testGenerateYamlStylish() throws Exception {
-        String yamlFile1 = "./src/test/resources/file1.yml";
-        String yamlFile2 = "./src/test/resources/file2.yml";
+        String yamlFilePath1 = "./src/test/resources/file1.yml";
+        String yamlFilePath2 = "./src/test/resources/file2.yml";
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -70,13 +70,13 @@ public class DifferTest {
                   + setting3: none
                 }""";
 
-        assertThat(Differ.generate(yamlFile1, yamlFile2, "stylish")).isEqualTo(expected);
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
     public void testGeneratePlain() throws Exception {
-        String file1 = "./src/test/resources/file1.json";
-        String file2 = "./src/test/resources/file2.json";
+        String filePath1 = "./src/test/resources/file1.json";
+        String filePath2 = "./src/test/resources/file2.json";
         String expected = """
                 Property 'chars2' was updated. From [complex value] to false
                 Property 'checked' was updated. From false to true
@@ -92,13 +92,13 @@ public class DifferTest {
                 Property 'setting2' was updated. From 200 to 300
                 Property 'setting3' was updated. From true to 'none'""";
 
-        assertThat(Differ.generate(file1, file2, "plain")).isEqualTo(expected);
+        assertThat(Differ.generate(filePath1, filePath2, "plain")).isEqualTo(expected);
     }
 
     @Test
     public void testGenerateJson() throws Exception {
-        String file1 = "./src/test/resources/file1.json";
-        String file2 = "./src/test/resources/file2.json";
+        String filePath1 = "./src/test/resources/file1.json";
+        String filePath2 = "./src/test/resources/file2.json";
         String expected = "{\"chars1\":{\"value\":[\"a\",\"b\",\"c\"],\"status\":\"unchanged\"},\"chars2\":"
                 + "{\"value2\":false,\"value1\":[\"d\",\"e\",\"f\"],\"status\":\"changed\"},\"checked\":{\"value2\""
                 + ":true,\"value1\":false,\"status\":\"changed\"},\"default\":{\"value2\":[\"value1\",\"value2\"],\""
@@ -111,6 +111,6 @@ public class DifferTest {
                 + "\"Another value\",\"value1\":\"Some value\",\"status\":\"changed\"},\"setting2\":{\"value2\":"
                 + "300,\"value1\":200,\"status\":\"changed\"},\"setting3\":{\"value2\":\"none\",\"value1\":true,"
                 + "\"status\":\"changed\"}}";
-        assertThat(Differ.generate(file1, file2, "json")).isEqualTo(expected);
+        assertThat(Differ.generate(filePath1, filePath2, "json")).isEqualTo(expected);
     }
 }
