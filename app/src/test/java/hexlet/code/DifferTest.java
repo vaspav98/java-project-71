@@ -11,7 +11,6 @@ public class DifferTest {
     public void testGenerateJsonStylish() throws Exception {
         Path jsonFile1 = Paths.get("./src/test/resources/file1.json");
         Path jsonFile2 = Paths.get("./src/test/resources/file2.json");
-
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -46,7 +45,6 @@ public class DifferTest {
     public void testGenerateYamlStylish() throws Exception {
         Path yamlFile1 = Paths.get("./src/test/resources/file1.yml");
         Path yamlFile2 = Paths.get("./src/test/resources/file2.yml");
-
         String expected = """
                 {
                     chars1: [a, b, c]
