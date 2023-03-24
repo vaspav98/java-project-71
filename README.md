@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/569122.svg)](https://asciinema.org/a/569122)
 ### Step 8
 [![asciicast](https://asciinema.org/a/569276.svg)](https://asciinema.org/a/569276)
+### Step 9
+[![asciicast](https://asciinema.org/a/569720.svg)](https://asciinema.org/a/569720)

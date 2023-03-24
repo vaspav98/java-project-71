@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 public class DifferTest {
 
     @Test
-    public void testGenerateJson() throws Exception {
+    public void testGenerateJsonStylish() throws Exception {
         Path jsonFile1 = Paths.get("./src/test/resources/file1.json");
         Path jsonFile2 = Paths.get("./src/test/resources/file2.json");
 
@@ -43,7 +43,7 @@ public class DifferTest {
     }
 
     @Test
-    public void testGenerateYaml() throws Exception {
+    public void testGenerateYamlStylish() throws Exception {
         Path yamlFile1 = Paths.get("./src/test/resources/file1.yml");
         Path yamlFile2 = Paths.get("./src/test/resources/file2.yml");
 
@@ -75,6 +75,29 @@ public class DifferTest {
                 }""";
 
         assertThat(Differ.generate(yamlFile1, yamlFile2, "stylish")).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGeneratePlain() throws Exception {
+        Path file1 = Paths.get("./src/test/resources/file1.json");
+        Path file2 = Paths.get("./src/test/resources/file2.json");
+        String expected = """
+                Property 'chars2' was updated. From [complex value] to false
+                Property 'checked' was updated. From false to true
+                Property 'default' was updated. From null to [complex value]
+                Property 'id' was updated. From 45 to null
+                Property 'key1' was removed
+                Property 'key2' was added with value: 'value2'
+                Property 'numbers2' was updated. From [complex value] to [complex value]
+                Property 'numbers3' was removed
+                Property 'numbers4' was added with value: [complex value]
+                Property 'obj1' was added with value: [complex value]
+                Property 'setting1' was updated. From 'Some value' to 'Another value'
+                Property 'setting2' was updated. From 200 to 300
+                Property 'setting3' was updated. From true to 'none'""";
+
+        assertThat(Differ.generate(file1, file2, "plain")).isEqualTo(expected);
+
     }
 
 }

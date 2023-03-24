@@ -44,9 +44,8 @@ public class Differ {
                 resultMap.put(key, description);
             }
         }
-        if (format.equals("stylish")) {
-            return Formatter.stylish(resultMap);
-        }
-        throw new RuntimeException("Unknown format: " + format);
+        System.out.println();
+
+        return Formatter.format(resultMap, format);
     }
 }
