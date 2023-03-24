@@ -103,18 +103,18 @@ public class DifferTest {
     public void testGenerateJson() throws Exception {
         Path file1 = Paths.get("./src/test/resources/file1.json");
         Path file2 = Paths.get("./src/test/resources/file2.json");
-        String expected = "{\"chars1\":{\"value\":[\"a\",\"b\",\"c\"],\"status\":\"unchanged\"},\"chars2\":" +
-                "{\"value2\":false,\"value1\":[\"d\",\"e\",\"f\"],\"status\":\"changed\"},\"checked\":{\"value2\"" +
-                ":true,\"value1\":false,\"status\":\"changed\"},\"default\":{\"value2\":[\"value1\",\"value2\"],\"" +
-                "value1\":null,\"status\":\"changed\"},\"id\":{\"value2\":null,\"value1\":45,\"status\":\"changed\"}," +
-                "\"key1\":{\"value\":\"value1\",\"status\":\"deleted\"},\"key2\":{\"value\":\"value2\",\"status\":\"" +
-                "added\"},\"numbers1\":{\"value\":[1,2,3,4],\"status\":\"unchanged\"},\"numbers2\":{\"value2\":" +
-                "[22,33,44,55],\"value1\":[2,3,4,5],\"status\":\"changed\"},\"numbers3\":{\"value\":[3,4,5]," +
-                "\"status\":\"deleted\"},\"numbers4\":{\"value\":[4,5,6],\"status\":\"added\"},\"obj1\":{\"value\":" +
-                "{\"nestedKey\":\"value\",\"isNested\":true},\"status\":\"added\"},\"setting1\":{\"value2\":" +
-                "\"Another value\",\"value1\":\"Some value\",\"status\":\"changed\"},\"setting2\":{\"value2\":" +
-                "300,\"value1\":200,\"status\":\"changed\"},\"setting3\":{\"value2\":\"none\",\"value1\":true," +
-                "\"status\":\"changed\"}}";
+        String expected = "{\"chars1\":{\"value\":[\"a\",\"b\",\"c\"],\"status\":\"unchanged\"},\"chars2\":"
+                + "{\"value2\":false,\"value1\":[\"d\",\"e\",\"f\"],\"status\":\"changed\"},\"checked\":{\"value2\""
+                + ":true,\"value1\":false,\"status\":\"changed\"},\"default\":{\"value2\":[\"value1\",\"value2\"],\""
+                + "value1\":null,\"status\":\"changed\"},\"id\":{\"value2\":null,\"value1\":45,\"status\":\"changed\"},"
+                + "\"key1\":{\"value\":\"value1\",\"status\":\"deleted\"},\"key2\":{\"value\":\"value2\",\"status\":\""
+                + "added\"},\"numbers1\":{\"value\":[1,2,3,4],\"status\":\"unchanged\"},\"numbers2\":{\"value2\":"
+                + "[22,33,44,55],\"value1\":[2,3,4,5],\"status\":\"changed\"},\"numbers3\":{\"value\":[3,4,5],"
+                + "\"status\":\"deleted\"},\"numbers4\":{\"value\":[4,5,6],\"status\":\"added\"},\"obj1\":{\"value\":"
+                + "{\"nestedKey\":\"value\",\"isNested\":true},\"status\":\"added\"},\"setting1\":{\"value2\":"
+                + "\"Another value\",\"value1\":\"Some value\",\"status\":\"changed\"},\"setting2\":{\"value2\":"
+                + "300,\"value1\":200,\"status\":\"changed\"},\"setting3\":{\"value2\":\"none\",\"value1\":true,"
+                + "\"status\":\"changed\"}}";
         assertThat(Differ.generate(file1, file2, "json")).isEqualTo(expected);
     }
 }
