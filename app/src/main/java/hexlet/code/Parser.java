@@ -4,12 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import java.io.File;
-import java.nio.file.Path;
 import java.util.Map;
 
 public class Parser {
 
-    public static Map<String, Object> parse(Path filepath, String inputFileFormat) throws Exception {
+    public static Map<String, Object> parse(String filepath, String inputFileFormat) throws Exception {
         ObjectMapper mapper;
         switch (inputFileFormat) {
             case "json":
@@ -22,7 +21,7 @@ public class Parser {
                 throw new Exception("Unknown format: " + inputFileFormat);
         }
 
-        Map<String, Object> map = mapper.readValue(new File(filepath.toString()),
+        Map<String, Object> map = mapper.readValue(new File(filepath),
                 new TypeReference<Map<String, Object>>() { });
         return map;
     }

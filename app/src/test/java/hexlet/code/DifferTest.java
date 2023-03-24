@@ -2,15 +2,13 @@ package hexlet.code;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class DifferTest {
 
     @Test
     public void testGenerateJsonStylish() throws Exception {
-        Path jsonFile1 = Paths.get("./src/test/resources/file1.json");
-        Path jsonFile2 = Paths.get("./src/test/resources/file2.json");
+        String jsonFile1 = "./src/test/resources/file1.json";
+        String jsonFile2 = "./src/test/resources/file2.json";
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -43,8 +41,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateYamlStylish() throws Exception {
-        Path yamlFile1 = Paths.get("./src/test/resources/file1.yml");
-        Path yamlFile2 = Paths.get("./src/test/resources/file2.yml");
+        String yamlFile1 = "./src/test/resources/file1.yml";
+        String yamlFile2 = "./src/test/resources/file2.yml";
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -77,8 +75,8 @@ public class DifferTest {
 
     @Test
     public void testGeneratePlain() throws Exception {
-        Path file1 = Paths.get("./src/test/resources/file1.json");
-        Path file2 = Paths.get("./src/test/resources/file2.json");
+        String file1 = "./src/test/resources/file1.json";
+        String file2 = "./src/test/resources/file2.json";
         String expected = """
                 Property 'chars2' was updated. From [complex value] to false
                 Property 'checked' was updated. From false to true
@@ -99,8 +97,8 @@ public class DifferTest {
 
     @Test
     public void testGenerateJson() throws Exception {
-        Path file1 = Paths.get("./src/test/resources/file1.json");
-        Path file2 = Paths.get("./src/test/resources/file2.json");
+        String file1 = "./src/test/resources/file1.json";
+        String file2 = "./src/test/resources/file2.json";
         String expected = "{\"chars1\":{\"value\":[\"a\",\"b\",\"c\"],\"status\":\"unchanged\"},\"chars2\":"
                 + "{\"value2\":false,\"value1\":[\"d\",\"e\",\"f\"],\"status\":\"changed\"},\"checked\":{\"value2\""
                 + ":true,\"value1\":false,\"status\":\"changed\"},\"default\":{\"value2\":[\"value1\",\"value2\"],\""

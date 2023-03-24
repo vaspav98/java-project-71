@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -10,7 +9,7 @@ import java.util.TreeSet;
 
 public class Differ {
 
-    public static String generate(Path filepath1, Path filepath2, String format) throws Exception {
+    public static String generate(String filepath1, String filepath2, String format) throws Exception {
         String inputFile1Format = Utils.getFileExtension(filepath1);
         Map<String, Object> map1 = Parser.parse(filepath1, inputFile1Format);
         String inputFile2Format = Utils.getFileExtension(filepath2);

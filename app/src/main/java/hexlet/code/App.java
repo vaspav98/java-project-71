@@ -4,7 +4,6 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
-import java.nio.file.Path;
 import java.util.concurrent.Callable;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
@@ -12,10 +11,10 @@ import java.util.concurrent.Callable;
 public class App implements Callable {
 
     @Parameters(paramLabel = "filepath1 ", description = "path to first file")
-    Path filepath1;
+    String filepath1;
 
     @Parameters(paramLabel = "filepath2 ", description = "path to second file")
-    Path filepath2;
+    String filepath2;
 
     @Option(names = {"-f", "--format"}, defaultValue = "stylish", paramLabel = "format",
             description = "output format [default: stylish]")
