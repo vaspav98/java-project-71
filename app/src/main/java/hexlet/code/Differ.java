@@ -44,7 +44,6 @@ public class Differ {
                 resultMap.put(key, description);
             }
         }
-        System.out.println();
 
         return Formatter.format(resultMap, format);
     }

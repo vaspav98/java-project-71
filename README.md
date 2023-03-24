@@ -11,3 +11,5 @@
 [![asciicast](https://asciinema.org/a/569276.svg)](https://asciinema.org/a/569276)
 ### Step 9
 [![asciicast](https://asciinema.org/a/569720.svg)](https://asciinema.org/a/569720)
+### Step 10
+[![asciicast](https://asciinema.org/a/569749.svg)](https://asciinema.org/a/569749)
