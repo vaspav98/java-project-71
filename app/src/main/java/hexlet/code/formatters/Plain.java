@@ -33,16 +33,15 @@ public class Plain {
                     throw new RuntimeException("Unknown status: " + status);
             }
         }
-        result.deleteCharAt(result.length() - 1);
-        return result.toString();
+        return result.toString().trim();
     }
 
-    private static Object normalize(Object arg) {
+    private static String normalize(Object arg) {
         if (arg instanceof String) {
             return "'" + arg + "'";
         }
         if (arg instanceof Integer || arg instanceof Character || arg instanceof Boolean || arg == null) {
-            return arg;
+            return String.valueOf(arg);
         }
         return "[complex value]";
     }

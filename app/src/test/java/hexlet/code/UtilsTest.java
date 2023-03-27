@@ -9,7 +9,7 @@ public class UtilsTest {
     public void testGetFileExtension() {
         String path1 = "./src/test/resources/file1.json";
         String path2 = "./src/test/resources/";
-        assertThat(Utils.getFileExtension(path1)).isEqualTo("json");
-        assertThat(Utils.getFileExtension(path2)).isEqualTo((""));
+        assertThat(Utils.getSourceFormat(path1)).isEqualTo("json");
+        assertThat(Utils.getSourceFormat(path2)).isEqualTo((""));
     }
 }

@@ -3,6 +3,14 @@
 [![Java CI](https://github.com/vaspav98/java-project-71/actions/workflows/my-check.yml/badge.svg)](https://github.com/vaspav98/java-project-71/actions/workflows/my-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1015f19da150375bdfa0/maintainability)](https://codeclimate.com/github/vaspav98/java-project-71/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1015f19da150375bdfa0/test_coverage)](https://codeclimate.com/github/vaspav98/java-project-71/test_coverage)
+# Вычислитель отличий
+Это второй проект професси Java-разработчик на Хекслете. Вычислитель отличий – программа, определяющая разницу между двумя структурами данных.
+
+Возможности утилиты:
+* Поддержка разных входных форматов: yaml и json
+* Генерация отчета в виде plain text, stylish и json
+
+
 ### Step 5
 [![asciicast](https://asciinema.org/a/567939.svg)](https://asciinema.org/a/567939)
 ### Step 7

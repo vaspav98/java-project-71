@@ -12,10 +12,10 @@ public final class App implements Callable {
 
 
     @Parameters(paramLabel = "filepath1", description = "path to first file")
-    private String filepath1;
+    private String path1;
 
     @Parameters(paramLabel = "filepath2", description = "path to second file")
-    private String filepath2;
+    private String path2;
 
     @Option(names = {"-f", "--format"}, defaultValue = "stylish", paramLabel = "format",
             description = "output format [default: stylish]")
@@ -28,7 +28,7 @@ public final class App implements Callable {
 
     @Override
     public String call() throws Exception {
-        System.out.println(Differ.generate(filepath1, filepath2, format));
-        return Differ.generate(filepath1, filepath2, format);
+        System.out.println(Differ.generate(path1, path2, format));
+        return Differ.generate(path1, path2, format);
     }
 }
