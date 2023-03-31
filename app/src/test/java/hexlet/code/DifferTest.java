@@ -2,11 +2,9 @@ package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class DifferTest {
@@ -32,38 +30,74 @@ public class DifferTest {
     }
 
     @Test
-    public void testGenerateStylish() throws Exception {
-        String jsonFilePath1 = "./src/test/resources/file1.json";
-        String ymlFilePath2 = "./src/test/resources/file2.yml";
+    public void testGenerateFromJsonToStylish() throws Exception {
+        String jsonFilePath1 = getFixturePath("file1.json").toString();
+        String jsonFilePath2 = getFixturePath("file2.json").toString();
         String expected = resultStylish;
 
-        assertThat(Differ.generate(jsonFilePath1, ymlFilePath2, "stylish")).isEqualTo(expected);
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
-    public void testGeneratePlain() throws Exception {
-        String ymlFilePath1 = "./src/test/resources/file1.yml";
-        String jsonFilePath2 = "./src/test/resources/file2.json";
+    public void testGenerateFromJsonToPlain() throws Exception {
+        String jsonFilePath1 = getFixturePath("file1.json").toString();
+        String jsonFilePath2 = getFixturePath("file2.json").toString();
         String expected = resultPlain;
 
-        assertThat(Differ.generate(ymlFilePath1, jsonFilePath2, "plain")).isEqualTo(expected);
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "plain")).isEqualTo(expected);
     }
 
     @Test
-    public void testGenerateJson() throws Exception {
-        String jsonFilePath1 = "./src/test/resources/file1.json";
-        String jsonFilePath2 = "./src/test/resources/file2.json";
+    public void testGenerateFromJsonToJson() throws Exception {
+        String jsonFilePath1 = getFixturePath("file1.json").toString();
+        String jsonFilePath2 = getFixturePath("file2.json").toString();
         String expected = resultJson;
 
         assertThat(Differ.generate(jsonFilePath1, jsonFilePath2, "json")).isEqualTo(expected);
     }
 
     @Test
-    public void testGenerateDefault() throws Exception {
-        String ymlFilePath1 = "./src/test/resources/file1.yml";
-        String ymlFilePath2 = "./src/test/resources/file2.yml";
+    public void testGenerateFromJsonToDefault() throws Exception {
+        String jsonFilePath1 = getFixturePath("file1.json").toString();
+        String jsonFilePath2 = getFixturePath("file2.json").toString();
         String expected = resultStylish;
 
-        assertThat(Differ.generate(ymlFilePath1, ymlFilePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(jsonFilePath1, jsonFilePath2)).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGenerateFromYamlToStylish() throws Exception {
+        String yamlFilePath1 = getFixturePath("file1.yml").toString();
+        String yamlFilePath2 = getFixturePath("file2.yml").toString();
+        String expected = resultStylish;
+
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "stylish")).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGenerateFromYamlToPlain() throws Exception {
+        String yamlFilePath1 = getFixturePath("file1.yml").toString();
+        String yamlFilePath2 = getFixturePath("file2.yml").toString();
+        String expected = resultPlain;
+
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "plain")).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGenerateFromYamlToJson() throws Exception {
+        String yamlFilePath1 = getFixturePath("file1.yml").toString();
+        String yamlFilePath2 = getFixturePath("file2.yml").toString();
+        String expected = resultJson;
+
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2, "json")).isEqualTo(expected);
+    }
+
+    @Test
+    public void testGenerateFromYamlToDefault() throws Exception {
+        String yamlFilePath1 = getFixturePath("file1.yml").toString();
+        String yamlFilePath2 = getFixturePath("file2.yml").toString();
+        String expected = resultStylish;
+
+        assertThat(Differ.generate(yamlFilePath1, yamlFilePath2)).isEqualTo(expected);
     }
 }
